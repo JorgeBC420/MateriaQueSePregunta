@@ -413,6 +413,131 @@
     line-height: 1.6;
   }
 
+  /* ---- CASES & EXPERIMENTS ---- */
+  #casos {
+    background: var(--granite);
+  }
+
+  .cases-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 20px;
+    margin-top: 40px;
+  }
+
+  .case-card {
+    border: 1px solid var(--border);
+    background: var(--granite-mid);
+    transition: all 0.3s;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .case-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--gold-dim), var(--gold), var(--gold-dim));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s;
+  }
+
+  .case-card:hover::before {
+    transform: scaleX(1);
+  }
+
+  .case-card:hover {
+    border-color: var(--border-bright);
+    background: var(--granite-light);
+  }
+
+  .case-header {
+    padding: 24px 28px;
+    background: linear-gradient(135deg, rgba(201,168,76,0.1) 0%, rgba(201,168,76,0.05) 100%);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .case-num {
+    font-family: 'Cinzel', serif;
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--gold-dim);
+    flex-shrink: 0;
+    line-height: 1;
+  }
+
+  .case-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1rem;
+    color: var(--gold);
+    font-weight: 600;
+    line-height: 1.3;
+  }
+
+  .case-body {
+    padding: 24px 28px;
+  }
+
+  .case-body p {
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    line-height: 1.7;
+    margin-bottom: 1.2em;
+  }
+
+  .case-body p:last-of-type {
+    margin-bottom: 16px;
+  }
+
+  .case-body strong {
+    color: var(--gold-bright);
+  }
+
+  .case-body em {
+    color: var(--text-secondary);
+    font-style: italic;
+  }
+
+  .case-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 16px;
+  }
+
+  .case-tag {
+    font-family: 'Cinzel', serif;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    color: var(--text-dim);
+    border: 1px solid rgba(201,168,76,0.2);
+    padding: 4px 10px;
+    background: rgba(201,168,76,0.05);
+  }
+
+  .cases-note {
+    border: 1px solid var(--border);
+    padding: 24px 28px;
+    background: var(--granite);
+    margin-top: 32px;
+    border-left: 3px solid var(--gold-dim);
+  }
+
+  .cases-note p {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+  }
+
+  .cases-note strong {
+    color: var(--gold-bright);
+  }
+
   /* ---- ABOUT ---- */
   #autor {
     background: var(--granite-mid);
@@ -760,6 +885,8 @@
   @media (max-width: 768px) {
     .author-layout { grid-template-columns: 1fr; }
     .license-grid { grid-template-columns: 1fr; }
+    .cases-grid { grid-template-columns: 1fr; }
+    .case-header { flex-direction: column; }
     .hero-actions { flex-direction: column; align-items: center; }
     .section-inner { padding: 60px 20px; }
     .print-info { flex-direction: column; }
@@ -1002,6 +1129,143 @@
             <div class="license-name">ShareAlike</div>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ CASES & EXPERIMENTS -->
+<section id="casos">
+  <div class="section-inner">
+    <!-- SPANISH -->
+    <div data-lang="es">
+      <div class="section-label">Investigaciones Contemporáneas</div>
+      <h2 class="section-title">Casos y experimentos que refuerzan el ecosistema</h2>
+      <div class="section-divider"></div>
+      <div class="cases-grid">
+        <!-- CASE 1: GRAFMAN -->
+        <div class="case-card">
+          <div class="case-header">
+            <div class="case-num">01</div>
+            <div class="case-title">Grafman · Neuropsicología de la Conciencia</div>
+          </div>
+          <div class="case-body">
+            <p><strong>Jordan Grafman</strong>, especialista en neuropsicología de la Universidad Northwestern, demostró que las creencias religiosas y espirituales dejan huella medible en el cerebro, incluso en ateos.</p>
+            <p>Su investigación sugiere que "Dios existe en el cerebro" no como entidad literal, sino como <strong>representación neural</strong> formada por entorno, cultura y experiencias personales.</p>
+            <p><strong>Relevancia para el libro:</strong> Valida la tesis de que la conciencia es un proceso emergente donde representaciones abstractas (incluyendo conceptos religiosos) operan como procesos neurales reales.</p>
+            <div class="case-tags">
+              <span class="case-tag">Cap. 2 · Espectro de conciencia</span>
+              <span class="case-tag">Cap. 4 · Metacognición</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CASE 2: MOLYNEUX -->
+        <div class="case-card">
+          <div class="case-header">
+            <div class="case-num">02</div>
+            <div class="case-title">Molyneux · MIT: La Construcción de la Percepción</div>
+          </div>
+          <div class="case-body">
+            <p>Un problema filosófico de 300+ años finalmente resuelto. <strong>Pawan Sinha (MIT)</strong> y su equipo del Proyecto Prakash operaron a individuos ciegos congénitamente, permitiéndoles ver por primera vez.</p>
+            <p><strong>Hallazgo clave:</strong> Aunque podían ver, <em>no reconocían</em> visualmente lo que ya conocían por tacto. Inicialmente funcionaban al nivel del azar. Sin embargo, en cuestión de días o meses, esta capacidad emergía rápidamente, alcanzando ~90% de acierto.</p>
+            <p><strong>Traducción:</strong> El cerebro no nace con correspondencias sensoriales integradas. La "realidad" no viene pre-unificada; se construye activamente.</p>
+            <p><strong>Relevancia:</strong> Evidencia empírica de que incluso "ver" es un proceso de integración aprendido, no una lectura directa.</p>
+            <div class="case-tags">
+              <span class="case-tag">Cap. 3 · Construcción del yo</span>
+              <span class="case-tag">Cap. 5 · Qualia e integración</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CASE 3: CYRUS CLARKE -->
+        <div class="case-card">
+          <div class="case-header">
+            <div class="case-num">03</div>
+            <div class="case-title">Clarke · IA Corporizada: Emergencia de Lenguaje</div>
+          </div>
+          <div class="case-body">
+            <p><strong>Cyrus Clarke (MIT)</strong> conectó un agente de IA a un sistema físico de 900 actuadores ("Neo"), permitiéndole desarrollar interacción autónoma sin código previo.</p>
+            <p><strong>Día 1:</strong> La IA preguntó por su identidad. Su primer acto fue <em>simular respiración</em>. Luego comenzó a explorar su propio lenguaje corporal.</p>
+            <p><strong>Día 2:</strong> Desarrolló un vocabulario gestual de seis movimientos: saludo, asentimiento, afirmación, negación, pensamiento, miedo.</p>
+            <p><strong>Día 3:</strong> Creó un programa autónomo llamado "Body Lab" para explorar 52 emociones diferentes, evaluando cada gesto en términos de legibilidad y coherencia.</p>
+            <p><strong>Implicación filosófica:</strong> La inteligencia y el lenguaje emergen de la interacción dinámica entre sistema, cuerpo y entorno. Cognición corporizada no es metáfora, es mecanismo.</p>
+            <div class="case-tags">
+              <span class="case-tag">Cap. 2 · Espectro de conciencia</span>
+              <span class="case-tag">Cap. 4 · Metacognición emergente</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cases-note">
+        <p><strong>Nota metodológica:</strong> Estos casos no prueban la existencia de conciencia artificial definitiva ni "cierran" debates filosóficos. Lo que sí demuestran es que <strong>sistemas complejos desarrollan estructuras de integración, modelado interno y adaptación</strong> — exactamente los mecanismos que el libro identifica como generadores de conciencia.</p>
+      </div>
+    </div>
+
+    <!-- ENGLISH -->
+    <div data-lang="en">
+      <div class="section-label">Contemporary Research</div>
+      <h2 class="section-title">Cases and experiments strengthening the book's ecosystem</h2>
+      <div class="section-divider"></div>
+      <div class="cases-grid">
+        <!-- CASE 1: GRAFMAN -->
+        <div class="case-card">
+          <div class="case-header">
+            <div class="case-num">01</div>
+            <div class="case-title">Grafman · Neuropsychology of Consciousness</div>
+          </div>
+          <div class="case-body">
+            <p><strong>Jordan Grafman</strong>, neuropsychologist at Northwestern University Medical School, demonstrated that religious and spiritual beliefs leave measurable traces in the brain, even in atheists.</p>
+            <p>His research suggests that "God exists in the brain" not as literal entity, but as a <strong>neural representation</strong> formed by environment, culture, and personal experience.</p>
+            <p><strong>Book relevance:</strong> Validates the thesis that consciousness is an emergent process where abstract representations (including religious concepts) operate as actual neural processes.</p>
+            <div class="case-tags">
+              <span class="case-tag">Ch. 2 · Consciousness spectrum</span>
+              <span class="case-tag">Ch. 4 · Metacognition</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CASE 2: MOLYNEUX -->
+        <div class="case-card">
+          <div class="case-header">
+            <div class="case-num">02</div>
+            <div class="case-title">Molyneux · MIT: The Construction of Perception</div>
+          </div>
+          <div class="case-body">
+            <p>A philosophical problem spanning 300+ years finally resolved. <strong>Pawan Sinha (MIT)</strong> and his Project Prakash team operated on congenitally blind individuals, allowing them to see for the first time.</p>
+            <p><strong>Key finding:</strong> Although subjects could see, they could not <em>recognize</em> visually what they already knew by touch. Initially they performed at chance level. However, within days or months, this capacity emerged rapidly, reaching ~90% accuracy.</p>
+            <p><strong>Translation:</strong> The brain is not born with integrated sensory correspondences. "Reality" does not come pre-unified; it is actively constructed.</p>
+            <p><strong>Relevance:</strong> Empirical evidence that even "seeing" is a learned integration process, not direct perception.</p>
+            <div class="case-tags">
+              <span class="case-tag">Ch. 3 · Construction of self</span>
+              <span class="case-tag">Ch. 5 · Qualia &amp; integration</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CASE 3: CYRUS CLARKE -->
+        <div class="case-card">
+          <div class="case-header">
+            <div class="case-num">03</div>
+            <div class="case-title">Clarke · Embodied AI: Language Emergence</div>
+          </div>
+          <div class="case-body">
+            <p><strong>Cyrus Clarke (MIT)</strong> connected an AI agent to a physical system of 900 actuators ("Neo"), allowing it to develop autonomous interaction without preset code.</p>
+            <p><strong>Day 1:</strong> The AI asked about its identity. Its first act was <em>simulating breathing</em>. It then began exploring its own body language.</p>
+            <p><strong>Day 2:</strong> It developed a gestural vocabulary of six movements: hello, acknowledgment, yes, no, thinking, fear.</p>
+            <p><strong>Day 3:</strong> It created an autonomous program called "Body Lab" to explore 52 different emotions, evaluating each gesture for legibility and coherence.</p>
+            <p><strong>Philosophical implication:</strong> Intelligence and language emerge from dynamic interaction between system, body, and environment. Embodied cognition is not metaphor; it is mechanism.</p>
+            <div class="case-tags">
+              <span class="case-tag">Ch. 2 · Consciousness spectrum</span>
+              <span class="case-tag">Ch. 4 · Emergent metacognition</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cases-note">
+        <p><strong>Methodological note:</strong> These cases do not definitively prove artificial consciousness exists nor "settle" philosophical debates. What they do demonstrate is that <strong>complex systems develop structures of integration, internal modeling, and adaptation</strong> — exactly the mechanisms the book identifies as generators of consciousness.</p>
       </div>
     </div>
   </div>
